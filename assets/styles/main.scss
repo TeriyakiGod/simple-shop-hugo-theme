@@ -9,9 +9,9 @@ $breakpoints: (
 
 $white: #f9f3f1ff;
 $black: #01050d;
-$light-green: #8db38bff;
-$medium-green: #56876dff;
-$dark-green: #04724dff;
+$primary-light: rgb(255, 0, 0);
+$primary-medium: rgb(187, 0, 0);
+$primary-dark: rgb(107, 0, 0);
 
 $collage-image-size: 300px;
 
@@ -53,10 +53,10 @@ h2 {
 
 a {
   text-decoration: none;
-  color: $dark-green;
+  color: $primary-dark;
   @include media('>=md') {
     &:hover {
-      color: $light-green;
+      color: $primary-light;
       cursor: pointer;
     }
   }
@@ -64,7 +64,7 @@ a {
 
 @include media('>=md') {
   .instagram:hover i:before {
-    color: $light-green;
+    color: $primary-light;
   }
 }
 
@@ -109,7 +109,7 @@ header {
   top: 0;
   background: $white;
 
-  box-shadow: 0px 1px 8px 0px $dark-green;
+  box-shadow: 0px 1px 8px 0px $primary-dark;
 
   img {
     width: 125px;
@@ -121,7 +121,7 @@ header {
 
 footer {
   padding: 2rem 0;
-  border-top: 5px solid $light-green;
+  border-top: 5px solid $primary-light;
   p {
     margin-top: 0;
     text-align: center;
@@ -136,9 +136,9 @@ a.btn {
   transition: all 0.3s ease 0s;
   @include media('>=md') {
     &:hover {
-      color: $medium-green;
+      color: $primary-medium;
       border-radius: 50px;
-      border-color: $medium-green;
+      border-color: $primary-medium;
       transition: all 0.3s ease 0s;
     }
   }
