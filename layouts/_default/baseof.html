@@ -45,7 +45,7 @@
     {{ end }}
 
     <title>{{ .Site.Title }}</title>
-    {{ with .Site.Params.description }}
+  {{ with (or site.Home.Params.description .Site.Params.description) }}
       <meta name="description" content="{{ . }}"
     />{{ end }}
     {{ with .Site.Params.author }}
