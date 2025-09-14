@@ -6,19 +6,31 @@
       {{ partial "category-selector" . }}
       <div class="container">
         <div class="products flex-grid">
-          {{ range .Pages.ByDate }}
-            {{ partial "product.html" .Params }}
+          {{ with site.GetPage "section" "products" }}
+            {{ range .RegularPages }}
+              {{ partial "product.html" .Params }}
+            {{ else }}
+              <p>No products found.</p>
+            {{ end }}
+          {{ else }}
+            <p>No products section.</p>
           {{ end }}
         </div>
       </div>
-      {{ partial "snipcart.html" . }}
+      <!-- {{ partial "snipcart.html" . }} -->
     </section>
     <section>
       <h2>{{ .Site.Params.Reviews_title }}</h2>
       <div class="container">
         <div class="reviews flex-grid">
-          {{ range .Site.Data.reviews }}
-            {{partial "review.html" . }}
+          {{ with site.GetPage "section" "reviews" }}
+            {{ range .RegularPages }}
+              {{ partial "review.html" .Params }}
+            {{ else }}
+              <p>No reviews found.</p>
+            {{ end }}
+          {{ else }}
+            <p>No reviews section.</p>
           {{ end }}
         </div>
       </div>
